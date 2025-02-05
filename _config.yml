@@ -1,0 +1,46 @@
+repository: dynamsoft-docs/mrz-scanner-docs-web
+repositoryUrl: https://github.com/dynamsoft-docs/mrz-scanner-docs/blob/main
+docFullPath: https://www.dynamsoft.com/mrz-scanner/docs
+firstLevelUrl: /mrz-scanner/docs
+docHomePage: /mrz-scanner/docs/introduction/
+
+introduction: /mrz-scanner/docs/introduction/
+gettingstarted: /mrz-scanner/docs/gettingstarted/
+codegallery: /mrz-scanner/docs/codegallery/
+api: /mrz-scanner/docs/api/
+
+guides: /mrz-scanner/docs/guides/
+
+
+releasenotes: /mrz-scanner/docs/releasenotes/
+
+useVersionTree: true
+
+assets: /mrz-scanner/docs/assets/
+edit_icon: /mrz-scanner/docs/assets/img-icon/edit-icon.png
+smile_icon: /mrz-scanner/docs/assets/img-icon/icon-smile.png
+sad_icon: /mrz-scanner/docs/assets/img-icon/icon-sad.png
+
+baseurl: "/mrz-scanner/docs"
+
+download: "/mrz-scanner/downloads/"
+
+plugins:
+  - jemoji
+  - jekyll-sitemap
+
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default-layout"
+      noTitleIndex: true
+      needAutoGenerateSidebar: true
+      needGenerateH3Content: true
+  - scope:
+      path: "Hide_Tree_Page.html"
+    values:
+      sitemap: false
+
+url: "https://www.dynamsoft.com" # sitemap root
