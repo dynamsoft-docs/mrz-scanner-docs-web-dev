@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>http://localhost:4000/mrz-scanner/docs/gettingstarted/add_dependency.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/mrz-scanner/docs/faq.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/mrz-scanner/docs/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/mrz-scanner/docs/gettingstarted/license.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/mrz-scanner/docs/guides/mrz-scanner.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/mrz-scanner/docs/search.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/mrz-scanner/docs/gettingstarted/sys_requirement.html</loc>
+</url>
+</urlset>

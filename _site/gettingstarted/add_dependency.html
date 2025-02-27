@@ -1,0 +1,108 @@
+<h1 id="adding-the-dependency">Adding the Dependency</h1>
+
+<p>To build the solution, we need to include six packages</p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">dynamsoft-label-recognizer</code>: Required. It defines the classes, interfaces, and enumerations specifically tailored for the Label Recognizer module.</li>
+  <li><code class="language-plaintext highlighter-rouge">dynamsoft-core</code>: Required. It encompasses common classes, interfaces, and enumerations that are shared across all SDKs in the Capture Vision architecture.</li>
+  <li><code class="language-plaintext highlighter-rouge">dynamsoft-license</code>: Required. It is responsible for the operations needed to initialize and operate the license.</li>
+  <li><code class="language-plaintext highlighter-rouge">dynamsoft-code-parser</code>: Required. It defines interfaces and enumerations specifically tailored to the Code Parser module.</li>
+  <li><code class="language-plaintext highlighter-rouge">dynamsoft-capture-vision-router</code>: Required. It defines the class <code class="language-plaintext highlighter-rouge">CaptureVisionRouter</code>, which governs the entire image processing workflow.</li>
+  <li><code class="language-plaintext highlighter-rouge">dynamsoft-camera-enhancer</code>: Required. It is used to define camera control features and capbilities as well as image acquisition features.</li>
+</ol>
+
+<h2 id="use-a-cdn">Use a CDN</h2>
+
+<p>The simplest way to include the SDK is to use either the <a href="https://jsdelivr.com/">jsDelivr</a> or <a href="https://unpkg.com/">UNPKG</a> CDN.</p>
+
+<ul>
+  <li>
+    <p>jsDelivr</p>
+
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/npm/dynamsoft-document-viewer@2.0.0/dist/ddv.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/npm/dynamsoft-core@3.2.10/dist/core.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/npm/dynamsoft-license@3.2.10/dist/license.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/npm/dynamsoft-document-normalizer@2.2.10/dist/ddn.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/npm/dynamsoft-capture-vision-router@2.2.10/dist/cvr.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/npm/dynamsoft-camera-enhancer@4.0.2/dist/dce.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>UNPKG</p>
+
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://unpkg.com/dynamsoft-document-viewer@2.0.0/dist/ddv.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://unpkg.com/dynamsoft-core@3.2.10/dist/core.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://unpkg.com/dynamsoft-license@3.2.10/dist/license.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://unpkg.com/dynamsoft-document-normalizer@2.2.10/dist/ddn.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://unpkg.com/dynamsoft-capture-vision-router@2.2.10/dist/cvr.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://unpkg.com/dynamsoft-camera-enhancer@4.0.2/dist/dce.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="host-yourself">Host yourself</h2>
+
+<p>Besides using the CDN, you can also download the SDKs and host related files on your own website/server before including it in your application. When using a CDN, resources related to <code class="language-plaintext highlighter-rouge">dynamsoft-image-processing</code> and <code class="language-plaintext highlighter-rouge">dynamsoft-capture-vision-std</code> are automatically loaded over the network; When using them locally, these two packages need to be configured manually.</p>
+
+<p><strong>Step 1</strong> Download the SDKs:</p>
+
+<ul>
+  <li>
+    <p>npm</p>
+
+    <pre><code class="language-cmd">npm install dynamsoft-document-viewer@2.0.0
+npm install dynamsoft-core@3.2.10
+npm install dynamsoft-license@3.2.10
+npm install dynamsoft-document-normalizer@2.2.10
+npm install dynamsoft-capture-vision-router@2.2.10
+npm install dynamsoft-capture-vision-std@1.2.0
+npm install dynamsoft-image-processing@2.2.10
+npm install dynamsoft-camera-enhancer@4.0.2
+</code></pre>
+  </li>
+</ul>
+
+<p><strong>Step 2</strong> Include the SDKs</p>
+
+<p>Depending on where you put them, you can typically include them like this:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"./node_modules/dynamsoft-document-viewer/dist/ddv.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"./node_modules/dynamsoft-core/dist/core.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"./node_modules/dynamsoft-license/dist/license.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"./node_modules/dynamsoft-document-normalizer/dist/ddn.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"./node_modules/dynamsoft-capture-vision-router/dist/cvr.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"./node_modules/dynamsoft-camera-enhancer/dist/dce.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p><strong>Step 3</strong> Specify the location of the engine files(optinal)</p>
+
+<p>If you would like to use the SDKs completely offline, please refer to <a href="#use-your-own-hosted-engine-files">Use your own hosted engine files</a>.</p>
+
+<h2 id="specify-the-location-of-the-engine-files">Specify the location of the engine files</h2>
+
+<p>This is usually only required with frameworks like Angular or React, etc. where the referenced JavaScript files such as cvr.js, ddn.js are compiled into another file, or hosting the engine files and using the SDKs completely offline. The purpose is to tell the SDK where to find the engine files (*.worker.js, *.wasm.js and *.wasm, etc.).</p>
+
+<h3 id="use-the-jsdelivr-cdn-with-frameworks-like-angular-or-react-etc">Use the jsDelivr CDN with frameworks like Angular or React, etc.</h3>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">Dynamsoft</span><span class="p">.</span><span class="nx">DDV</span><span class="p">.</span><span class="nx">Core</span><span class="p">.</span><span class="nx">engineResourcePath</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://cdn.jsdelivr.net/npm/dynamsoft-document-viewer@2.0.0/dist/engine</span><span class="dl">"</span><span class="p">;</span>
+  <span class="nx">Dynamsoft</span><span class="p">.</span><span class="nx">Core</span><span class="p">.</span><span class="nx">CoreModule</span><span class="p">.</span><span class="nx">engineResourcePaths</span><span class="p">.</span><span class="nx">core</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://cdn.jsdelivr.net/npm/dynamsoft-core@3.2.10/dist/</span><span class="dl">"</span><span class="p">;</span>
+  <span class="nx">Dynamsoft</span><span class="p">.</span><span class="nx">Core</span><span class="p">.</span><span class="nx">CoreModule</span><span class="p">.</span><span class="nx">engineResourcePaths</span><span class="p">.</span><span class="nx">license</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://cdn.jsdelivr.net/npm/dynamsoft-license@3.2.10/dist/</span><span class="dl">"</span><span class="p">;</span>
+  <span class="nx">Dynamsoft</span><span class="p">.</span><span class="nx">Core</span><span class="p">.</span><span class="nx">CoreModule</span><span class="p">.</span><span class="nx">engineResourcePaths</span><span class="p">.</span><span class="nx">ddn</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://cdn.jsdelivr.net/npm/dynamsoft-document-normalizer@2.2.10/dist/</span><span class="dl">"</span><span class="p">;</span>
+  <span class="nx">Dynamsoft</span><span class="p">.</span><span class="nx">Core</span><span class="p">.</span><span class="nx">CoreModule</span><span class="p">.</span><span class="nx">engineResourcePaths</span><span class="p">.</span><span class="nx">cvr</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://cdn.jsdelivr.net/npm/dynamsoft-capture-vision-router@2.2.10/dist/</span><span class="dl">"</span><span class="p">;</span>
+  <span class="nx">Dynamsoft</span><span class="p">.</span><span class="nx">Core</span><span class="p">.</span><span class="nx">CoreModule</span><span class="p">.</span><span class="nx">engineResourcePaths</span><span class="p">.</span><span class="nx">std</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://cdn.jsdelivr.net/npm/dynamsoft-capture-vision-std@1.2.0/dist/</span><span class="dl">"</span><span class="p">;</span>
+  <span class="nx">Dynamsoft</span><span class="p">.</span><span class="nx">Core</span><span class="p">.</span><span class="nx">CoreModule</span><span class="p">.</span><span class="nx">engineResourcePaths</span><span class="p">.</span><span class="nx">dip</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://cdn.jsdelivr.net/npm/dynamsoft-image-processing@2.2.10/dist/</span><span class="dl">"</span><span class="p">;</span>
+  <span class="nx">Dynamsoft</span><span class="p">.</span><span class="nx">Core</span><span class="p">.</span><span class="nx">CoreModule</span><span class="p">.</span><span class="nx">engineResourcePaths</span><span class="p">.</span><span class="nx">dce</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://cdn.jsdelivr.net/npm/dynamsoft-camera-enhancer@4.0.2/dist/</span><span class="dl">"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h3 id="use-your-own-hosted-engine-files">Use your own hosted engine files</h3>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">//Feel free to change it to your own location of these files</span>
+  <span class="nx">Dynamsoft</span><span class="p">.</span><span class="nx">DDV</span><span class="p">.</span><span class="nx">Core</span><span class="p">.</span><span class="nx">engineResourcePath</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">./node_modules/dynamsoft-document-viewer/dist/engine</span><span class="dl">"</span><span class="p">;</span>
+  <span class="nx">Dynamsoft</span><span class="p">.</span><span class="nx">Core</span><span class="p">.</span><span class="nx">CoreModule</span><span class="p">.</span><span class="nx">engineResourcePaths</span><span class="p">.</span><span class="nx">core</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">./node_modules/dynamsoft-core/dist/</span><span class="dl">"</span><span class="p">;</span>
+  <span class="nx">Dynamsoft</span><span class="p">.</span><span class="nx">Core</span><span class="p">.</span><span class="nx">CoreModule</span><span class="p">.</span><span class="nx">engineResourcePaths</span><span class="p">.</span><span class="nx">license</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">./node_modules/dynamsoft-license/dist/</span><span class="dl">"</span><span class="p">;</span>
+  <span class="nx">Dynamsoft</span><span class="p">.</span><span class="nx">Core</span><span class="p">.</span><span class="nx">CoreModule</span><span class="p">.</span><span class="nx">engineResourcePaths</span><span class="p">.</span><span class="nx">ddn</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">./node_modules/dynamsoft-document-normalizer/dist/</span><span class="dl">"</span><span class="p">;</span>
+  <span class="nx">Dynamsoft</span><span class="p">.</span><span class="nx">Core</span><span class="p">.</span><span class="nx">CoreModule</span><span class="p">.</span><span class="nx">engineResourcePaths</span><span class="p">.</span><span class="nx">cvr</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">./node_modules/dynamsoft-capture-vision-router/dist/</span><span class="dl">"</span><span class="p">;</span>
+  <span class="nx">Dynamsoft</span><span class="p">.</span><span class="nx">Core</span><span class="p">.</span><span class="nx">CoreModule</span><span class="p">.</span><span class="nx">engineResourcePaths</span><span class="p">.</span><span class="nx">std</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">./node_modules/dynamsoft-capture-vision-std/dist/</span><span class="dl">"</span><span class="p">;</span>
+  <span class="nx">Dynamsoft</span><span class="p">.</span><span class="nx">Core</span><span class="p">.</span><span class="nx">CoreModule</span><span class="p">.</span><span class="nx">engineResourcePaths</span><span class="p">.</span><span class="nx">dip</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">./node_modules/dynamsoft-image-processing/dist/</span><span class="dl">"</span><span class="p">;</span>
+  <span class="nx">Dynamsoft</span><span class="p">.</span><span class="nx">Core</span><span class="p">.</span><span class="nx">CoreModule</span><span class="p">.</span><span class="nx">engineResourcePaths</span><span class="p">.</span><span class="nx">dce</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">./node_modules/dynamsoft-camera-enhancer/dist/</span><span class="dl">"</span><span class="p">;</span>
+</code></pre></div></div>
+
