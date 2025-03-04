@@ -38,6 +38,32 @@ This guide expands on the User Guide that explored the Hello World implementatio
 
 9. **showResultView** - Controls the visibility of the **MRZResultView**. If set to false, the result view will not show up and the app will close the scanner and go to the next step once the MRZ is successfully scanned. In the Hello World sample, the next step just takes you back to the landing page - but this can be changed by the developer to accommodate whatever action they would like to take when the operation is done.
 
+Now let's explore the different ways that these properties can be used
+
+### Setting the MRTD formats
+
+Before getting into this, if you haven't already, we recommend reading through the [MRZ Formats section of the Introduction](../introduction/index.md#supported-mrz-formats) to get familiar with the different MRTD types. Now, let's say that you want to limit the supported MRZ document types to just passports (**TD3**) and IDs that are of type **TD1**. Here is a quick snippet based on the Hello World code (from the [User Guide]) that shows how to initialize the MRZ Scanner instance and change the supported MRZ format types:
+
+```js
+const mrzscanner = new Dynamsoft.MRZScanner({
+   license: "YOUR-LICENSE-KEY",
+   mrzFormatType: [Dynamsoft.EnumMRZDocumentType.Passport, Dynamsoft.EnumMRZDocumentType.TD1], // setting it to just TD3 and TD1
+});
+```
+
+**Important Note**: After changing the **mrzFormatType**, you will notice that the format selector box of the MRZScannerView reflects the two formats selected above instead of the three formats by default. If a single format is assigned to **mrzFormatType**, then the format selector box of the MRZScannerView *will not show up even if showFormatSelector is set to true*.
+
+### Hiding the Result View
+
+There could be some cases where you do not require to use the default result view, like if you already have built your own viewer to displa the result info, or if it's a completely automated process where a user is not directly involved in scanning the MRZ, then that would also not necessarily need a result view. Here is how you can configure the MRZScanner to hide the result view:
+
+```js
+const mrzscanner = new Dynamsoft.MRZScanner({
+   license: "YOUR-LICENSE-KEY",
+   showResultView: false,
+});
+```
+
 ## MRZScannerViewConfig Overview
 
 **MRZScannerViewConfig** is used to control the UI elements of the **MRZScannerView**, which is the main view of the scanning operation. Let's break down the different properties that make up the MRZScannerView:
@@ -60,3 +86,14 @@ This guide expands on the User Guide that explored the Hello World implementatio
 
 7. **enableMultiFrameCrossFilter** - The multi-frame result cross filter is a feature that ensures the library relays the most accurate results. It is disabled by default, so if you choose to enable it, please note that there could be a slight time cost.
 
+## MRZResultViewConfig
+
+**MRZResultViewConfig** is used to display the parsed MRZ results into readable fields, saving time and resources needed to build your own viewer. In this section, we will explore the different UI elements of the result view and how they can be configured.
+
+1. **container** - In order to contain the **MRZResultView** within a specific DOM element, then that DOM element must be assigned to this property. If it is not specified (like in the Hello World sample) then a container is automatically created.
+
+2. **toolbarButtonsConfig** - The result view comes with a toolbar at the bottom (in portrait mode) or at the right side (in landscape mode) 
+
+3. **showOriginalImage** - By default, the MRZResultView displays a cropped image of the MRZ document at the top. If you would like to hide this image so that it is only the parsed result info that appears, then all you need to do is set this property to *false*.
+
+4. **allowResultEditing** - In certain cases, the MRZ result info that is parsed by the library might come out incorrect or not exactly match the info that is present on the MRZ document. In order to deal with those cases, the library offers the capability for the user to edit the result fields after cross-checking them with the info present on the document itself.
