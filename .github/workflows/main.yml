@@ -1,33 +1,64 @@
-  # This is a basic workflow to help you get started with Actions
-
 name: CI MRZ-JS
 
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push events but only for the master branch
   push:
     branches: 
-    - main 
-    #- preview 
+    - main
 
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:
-  # This workflow contains jobs called "Build-Main" and "Build-Preview"
-  Build-Main:
-    if: ${{ github.ref == 'refs/heads/main' }}
-    uses: dynamsoft-docs/Docs-Template-Repo/.github/workflows/called-workflow-build-sync-production.yml@main
-    with:
-      doc-repo: mrz-scanner-docs-web-dev
-      doc-url: mrz-scanner/docs/web
-    secrets: inherit
+	jobs:
+  Build-Main-Dev:
+	runs-on: [self-hosted, doc-build]
+  steps:
+    # Runs a set of commands using the runners shell
+    - name: Build the full site with main branch - Dev Repo
+      run: |
+        cd ${{ runner.temp }}
+        mkdir -p DocHome
+        git clone --depth 1 --branch main https://github.com/dynamsoft-docs/mrz-scanner-docs-web-dev.git mrz-scanner-docs-web-dev
+        git clone --depth 1 --branch main https://github.com/dynamsoft-docs/Docs-Template-Repo.git Docs-Template-Repo
+        cp -rfp ./mrz-scanner-docs-web-dev/* ./DocHome/
+        cp -rfp ./Docs-Template-Repo/* ./DocHome/
+        sed -i -e "1,3s/blob\/master$/blob\/preview/" \
+        -e "1,3s/blob\/main$/blob\/preview/" ${{ runner.temp }}/DocHome/_config.yml
+        cd DocHome && bundle install && bundle exec jekyll build
 
-  Build-Preview:
-    if: ${{ github.ref == 'refs/heads/preview' }}
-    uses: dynamsoft-docs/Docs-Template-Repo/.github/workflows/called-workflow-build-sync-testing.yml@preview
-    with:
-      doc-repo: mrz-scanner-docs-web-dev
-      doc-url: mrz-scanner/docs/web
-    secrets: inherit
+    - name: 'Create Tar files'
+      run: tar -czvf mrz-scanner-docs-web-dev.tar.gz -C ${{ runner.temp }}/DocHome/_site .
+
+    - name: Upload the built site as a single artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: mrz-scanner-docs-web-dev
+        path: mrz-scanner-docs-web-dev.tar.gz
+        retention-days: 2
+
+  Sync-To-Testing:
+    # The type of runner that the job will run on
+    runs-on: [self-hosted, upload-test]
+    needs: Build-Site-Preview
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Runs a set of commands using the runners shell
+      - name: Download the artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: mrz-scanner-docs-web-dev
+
+      - name: 'Extract Tar files'
+        shell: cmd
+        run: |
+          mkdir ${{ runner.temp }}\DocHome\_site
+          tar -xzf mrz-scanner-docs-web-dev.tar.gz -C ${{ runner.temp }}\DocHome\_site
+
+      - name: Sync files
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: ${{ secrets.FTP_TEST_SITE_SERVER }}
+          username: ${{ secrets.FTP_TEST_SITE_USER }}
+          password: ${{ secrets.FTP_TEST_SITE_PASSWORD }}
+          port: 7500 
+          local-dir: ${{ runner.temp }}\DocHome\_site/
+          server-dir: /www.dynamsoft.com/mrz-scanner/docs/web/        
