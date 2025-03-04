@@ -1,1 +1,267 @@
+<h1 id="user-guide-for-the-mrz-scanner-for-web">User Guide for the MRZ Scanner for Web</h1>
 
+<p>This user guide will walk you through the [HelloWorld] sample app. When creating your own application, we recommend using this sample as a reference.</p>
+
+<p>To learn about what an MRZ is, along with the makeup and system requirements of this solution, please visit the <a href="../introduction/index.md">Introduction</a> page.</p>
+
+<h2 id="license">License</h2>
+
+<h3 id="trial-license">Trial License</h3>
+
+<p>When you are getting started with the MRZ Scanner solution, we recommend getting your own 30-day trial license through the <a href="https://www.dynamsoft.com/customer/license/trialLicense/?product=mrz&amp;utm_source=guide&amp;package=js">customer portal</a>. The trial license can be renewed via the same customer portal twice, each time for another 15 days, giving you a total of 60 days to develop your own application using the solution. If more time is needed for a full evaluation, please contact the <a href="https://www.dynamsoft.com/company/contact/">Dynamsoft Support Team</a>.</p>
+
+<blockquote>
+  <p>Note:</p>
+
+  <p>Please note that the <strong>MRZ Scanner</strong> license contains a license for the <strong>Dynamsoft Label Recognizer</strong>, <strong>Dynamsoft Code Parser</strong>, and the <strong>Dynamsoft Camera Enhancer</strong> as those are the three functional products that are central to the operation of the MRZ Scanner.</p>
+</blockquote>
+
+<h3 id="full-license">Full License</h3>
+
+<p>If you are fully satisfied with the solution and would like to move forward with a full license, please contact the <a href="https://www.dynamsoft.com/company/contact/">Dynamsoft Sales Team</a>.</p>
+
+<h2 id="quick-start---including-the-sdk-and-creating-hello-world">Quick Start - Including the SDK and creating Hello World</h2>
+
+<p>As mentioned previously, the purpose of this guide is to help you implement a Hello World application using the MRZ Scanner solution. To showcase this, we will be using vanilla JS. You can find the full code in the [samples Github repo].</p>
+
+<p>The first step before you venture into writing the code is to include the SDK in your application. The simplest way to include the SDK would be to use the precompiled script - but you can also build it from source yourself.</p>
+
+<div class="multi-panel-switching-prefix"></div>
+
+<div class="multi-panel-start"></div>
+<div class="multi-panel-title">Use Precompiled Script</div>
+
+<p>The simplest way to include the SDK is to use either the <a href="https://jsdelivr.com/"><strong>jsDelivr</strong></a> or <a href="https://unpkg.com/"><strong>UNPKG</strong></a> CDN. The “hello world” sample that this guide will explore uses <strong>jsDelivr</strong>:</p>
+
+<ul>
+  <li>
+    <p>jsDelivr</p>
+
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/npm/dynamsoft-mrz-scanner@2.0.0/dist/mrz.bundle.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>UNPKG</p>
+
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://unpkg.com/dynamsoft-mrz-scanner@2.0.0/dist/mrz.bundle.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>When using a framework such as <strong>React</strong>, <strong>Vue</strong> or <strong>Angular</strong>, we recommend adding the package as a dependency using a package manager such as <strong>npm</strong> or <strong>yarn</strong>:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  npm i dynamsoft-mrz-scanner@2.0.0 <span class="nt">-E</span>
+  <span class="c"># or</span>
+  yarn add dynamsoft-mrz-scanner@2.0.0 <span class="nt">-E</span>
+</code></pre></div></div>
+
+<p><strong>Important Note:</strong></p>
+
+<p>When using a package manager like <strong>npm</strong> or <strong>yarn</strong>, you will most probably need to specify the location of the engine files, which will be the CDN link.</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// in framework like React, Angular, or Vue</span>
+<span class="o">&lt;</span><span class="nx">insert</span> <span class="nx">what</span> <span class="nx">the</span> <span class="nx">code</span> <span class="nx">will</span> <span class="nx">look</span> <span class="nx">like</span> <span class="k">in</span> <span class="nx">MRZScannerConfig</span> <span class="nx">when</span> <span class="nx">using</span> <span class="nx">React</span><span class="o">&gt;</span>
+</code></pre></div></div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// in vanilla js</span>
+<span class="kd">const</span> <span class="nx">mrzscanner</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Dynamsoft</span><span class="p">.</span><span class="nc">MRZScanner</span><span class="p">({</span>
+    <span class="na">license</span><span class="p">:</span> <span class="dl">"</span><span class="s2">YOUR_LICENSE_KEY_HERE</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">engineResourcePaths</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://cdn.jsdelivr.net/npm/</span><span class="dl">"</span><span class="p">,</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>Below is the complete <em>Hello World</em> sample page that uses the precompiled script via a CDN.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1.0"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Dynamsoft MRZ Scanner - Hello World<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"../dist/mrz-scanner.bundle.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1</span> <span class="na">style=</span><span class="s">"font-size: large"</span><span class="nt">&gt;</span>Dynamsoft MRZ Scanner<span class="nt">&lt;/h1&gt;</span>
+
+    <span class="nt">&lt;script&gt;</span>
+      <span class="c1">// Initialize the Dynamsoft MRZ Scanner</span>
+      <span class="kd">const</span> <span class="nx">mrzscanner</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Dynamsoft</span><span class="p">.</span><span class="nc">MRZScanner</span><span class="p">({</span>
+        <span class="na">license</span><span class="p">:</span> <span class="dl">"</span><span class="s2">YOUR-LICENSE-KEY-HERE</span><span class="dl">"</span><span class="p">,</span>
+      <span class="p">});</span>
+      <span class="p">(</span><span class="k">async </span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="c1">// Launch the scanner and wait for the result</span>
+        <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">mrzscanner</span><span class="p">.</span><span class="nf">launch</span><span class="p">({});</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+      <span class="p">})();</span>
+    <span class="nt">&lt;/script&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>Note:</p>
+
+  <p>This code is identical to the Hello World file mentioned in <em>Build from Source</em>, except for the script source of course.</p>
+
+  <p>Please do not forget to replace ‘YOUR-LICENSE-KEY-HERE’ with your own license key, whether it is trial or full.</p>
+</blockquote>
+
+<p>To run the sample, create a new file called <code class="language-plaintext highlighter-rouge">hello-world.html</code>, then copy and paste the code above into the file. Next, serve the page directly by deploying it to a server.</p>
+
+<p>If you are using VS Code, a quick and easy way to serve the project is using the <a href="https://marketplace.visualstudio.com/items?itemName=yandeu.five-server">Five Server VSCode extension</a>. Simply install the extension, open the <code class="language-plaintext highlighter-rouge">hello-world.html</code> file in the editor, and click “Go Live” in the bottom right corner of the editor. This will serve the application at <code class="language-plaintext highlighter-rouge">http://127.0.0.1:5500/hello-world.html</code>.</p>
+
+<p>Alternatively, you can use other methods like <code class="language-plaintext highlighter-rouge">IIS</code> or <code class="language-plaintext highlighter-rouge">Apache</code> to serve the project, though that won’t cover those here for brevity.</p>
+
+<div class="multi-panel-end"></div>
+
+<div class="multi-panel-start"></div>
+<div class="multi-panel-title">Build from Source</div>
+
+<p>While using the pre-compiled script is the easiest way to get started with the MRZ Scanner, we do also allow the developer to build the scanner themselves from the source files. The advantage of doing this is that it allows the developer to do some deep customization of the scanner if they are familiar with using the foundational products <strong>Dynamsoft Label Recognizer</strong>, <strong>Dynamsoft Code Parser</strong>, and the <strong>Dynamsoft Camera Enhancer</strong>.</p>
+
+<p>This method requires retrieving the <strong>MRZ Scanner for Web</strong> source files from its [Github repo], compiles them into a distributable package, and then runs a <em>ready-made</em> Hello World sample page that is already included in the repo.</p>
+
+<p>Please follow these steps in order to build from the source:</p>
+
+<ol>
+  <li>
+    <p>Download the <strong>MRZ Scanner for Web</strong> source files from [Github] as a compressed folder (“Download ZIP” option).</p>
+  </li>
+  <li>
+    <p>Extract the contents of the compressed folder.</p>
+  </li>
+  <li>
+    <p>Open the <em>Hello World</em> sample included with the source files located at <code class="language-plaintext highlighter-rouge">../samples/hello-world.html</code>.</p>
+  </li>
+  <li>
+    <p>Search for ‘YOUR-LICENSE-KEY-HERE’ ad replace that with your own license key, whether it is trial or full.</p>
+  </li>
+  <li>Install project dependencies - in the terminal, navigate to the project root directory and run the following:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> npm <span class="nb">install</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Build the project - once the dependencies are installed, build the project by running:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> npm run build
+</code></pre></div>    </div>
+  </li>
+  <li>Serve the project via localhost:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> npm run serve
+</code></pre></div>    </div>
+    <p>Once the server is running, open the application in a browser using the address provided in the terminal output after running <code class="language-plaintext highlighter-rouge">npm run serve</code>.</p>
+  </li>
+</ol>
+
+<div class="multi-panel-end"></div>
+
+<div class="multi-panel-switching-end"></div>
+
+<h2 id="breaking-down-hello-world">Breaking down Hello World</h2>
+
+<p>Let’s now go through the code of the Hello World sample and understand the purpose of each section and how they all work together to bring the app to life.</p>
+
+<h3 id="step-1-setting-up-the-html-and-including-the-mrz-scanner">Step 1: Setting up the HTML and Including the MRZ Scanner</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1.0"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Dynamsoft MRZ Scanner - Hello World<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/npm/dynamsoft-mrz-scanner@2.0.0/dist/mrz.bundle.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1</span> <span class="na">style=</span><span class="s">"font-size: large"</span><span class="nt">&gt;</span>Dynamsoft MRZ Scanner<span class="nt">&lt;/h1&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>The first step in setting up the HTML in a Hello World implementation is to include the SDK. The ways to include the SDK has already been addressed in the <a href="#quick-start---including-the-sdk-and-creating-hello-world">Quick Start</a> section, so please refer to that if you have not already. In this example, we are including the MRZ Scanner via the precompiled script as that is the easiest way to get started.</p>
+
+<p>Since this is a Hello World implementation, the HTML body will be kept quite simple. Since the MRZ Scanner comes with a <strong>Ready-to-Use UI</strong>, it is not necessary to place any <code class="language-plaintext highlighter-rouge">&lt;div&gt;</code> placeholder elements or anything like. Once the scanner is launched, the <strong>Ready-to-Use UI</strong> will come up and occupy the page.</p>
+
+<!-- The main DOM element that is required in the `<body>` is a `<div>` element where the MRZ result (or lack thereof) and the original image of the MRZ document will be displayed once the user clicks *Done* in the result view. Feel free to customize the styling of the `<div>` element to your liking. -->
+
+<p>Now let’s move to the main script that will define the operation of the</p>
+
+<h3 id="step-2-initialize-the-mrz-scanner">Step 2: Initialize the MRZ Scanner</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Initialize the Dynamsoft MRZ Scanner</span>
+<span class="kd">const</span> <span class="nx">mrzscanner</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Dynamsoft</span><span class="p">.</span><span class="nc">MRZScanner</span><span class="p">({</span>
+  <span class="na">license</span><span class="p">:</span> <span class="dl">"</span><span class="s2">YOUR_LICENSE_KEY_HERE</span><span class="dl">"</span><span class="p">,</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>Above you will see the <strong>simplest</strong> way that you can initialize the MRZ Scanner. The one that is <strong>absolutely required</strong> in this setup is the <strong>license</strong>. Without a valid license, the MRZ Scanner view will not launch and you will be met with an error message explaining that the license key is invalid or has expired. To learn how to get your own license, please refer to the <a href="#license">License</a> section of the guide.</p>
+
+<h3 id="step-3-launching-the-mrz-scanner">Step 3: Launching the MRZ Scanner</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">async </span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// Launch the scanner and wait for the result</span>
+  <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">mrzscanner</span><span class="p">.</span><span class="nf">launch</span><span class="p">({});</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span> 
+<span class="p">})();</span>
+</code></pre></div></div>
+
+<p>Now that the MRZ Scanner has been initialized and configured, it is ready to be launched! Once the MRZ Scanner is launched, the user will see the main <strong>MRZScannerView</strong>. Once a MRZ is scanned (via video or static image), the MRZ Scanner then switches to the <strong>MRZResultView</strong> to display a cropped image of the MRZ document as well as the parsed fields of the MRZ text. Let’s break down these two views:</p>
+
+<h4 id="mrzscannerview">MRZScannerView</h4>
+
+<p>Here is a quick breakdown of the UI elements that make up the main view of the MRZ Scanner</p>
+
+<ol>
+  <li>
+    <p><strong>Camera View</strong>: The majority of the space of the MRZScannerView is occupied by the camera view to give the user a complete picture of what is being seen by the camera.</p>
+  </li>
+  <li>
+    <p><strong>Scan Guide Frame</strong>: By default, at the centre of the camera view you will find a frame that helps guide the user on where to place the MRZ document to get a fast and accurate result. Please note that if scan guide frame is shown, then anything outside of the frame will not be captured. This frame can be hidden via the <strong>MRZScannerViewConfig</strong> interface.</p>
+  </li>
+  <li>
+    <p><strong>Format Selector</strong>: Below the scan guide frame, you will also notice a selector box that allows the user to choose which formats the MRZ Scanner should recognize. The formats that show up in the format selector are configurable via the <strong>MRZScannerConfig</strong> interface, while the visibility of the format selector itself is configurable via the <strong>MRZScannerViewConfig</strong> interface. To learn about MRZ formats, please refer to the <a href="../introduction/index.md#supported-mrz-formats">Introduction</a> page.</p>
+  </li>
+  <li>
+    <p><strong>Resolution/Camera Select Dropdown</strong>: This dropdown allows the user to switch cameras (should they have more than one available on the device), or select a different resolution for the camera that is currently selected.</p>
+  </li>
+  <li>
+    <p><strong>Load Image Button</strong>: When this button is clicked, the user can select a MRZ document image from the device’s local storage to be recognized.</p>
+  </li>
+  <li>
+    <p><strong>Sound Button</strong>: By toggling this on, the MRZ Scanner will play a <em>beep</em> sound to signal that the MRZ has been successfully recognized.</p>
+  </li>
+  <li>
+    <p><strong>Flash Button</strong>: This button is responsible for toggling the flash of the camera should it have one. If the device doesn’t have the flash feature or if the browser being used doesn’t support flash, this flash icon will not show up.</p>
+  </li>
+  <li>
+    <p><strong>Close Scanner Button</strong>: Clicking this button will close the MRZ Scanner and take the user back to the landing page.</p>
+  </li>
+</ol>
+
+<h4 id="mrzresultview">MRZResultView</h4>
+
+<p>Here is a quick breakdown of the UI elements that make up the result view</p>
+
+<ol>
+  <li>
+    <p><strong>Original Image</strong>: A cropped image of the MRZ document that was just scanned will be displayed at the top by default.</p>
+  </li>
+  <li>
+    <p><strong>Parsed Results</strong>: The parsed results, along with their corresponding field names, are displayed in a form view underneath the original image. In addition to displaying these parsed results, the MRZ Scanner allows the user to edit any of the fields if they find that any of the parsed info is incorrect after cross referencing it with the info on the MRZ document.</p>
+  </li>
+  <li>
+    <p><strong>Re-take Button</strong>: Clicking this button allows the user to go back to the <strong>MRZScannerView</strong> to scan another MRZ document.</p>
+  </li>
+  <li>
+    <p><strong>Done Button</strong>: Clicking this button basically closes the scanner and destroys the <strong>MRZScanner</strong> instance. At that point, the application will go back to the landing page, but the developer can dictate the action to take once this button is clicked. These actions can include allowing the user to perform some extra actions with the MRZ result, or navigating to another page, or really anything that the developer would like to do once the scanning operation is done.</p>
+  </li>
+</ol>
+
+<blockquote>
+  <p>Note:</p>
+
+  <p>In the Hello World sample, no action is taken once the Done button is clicked. The scanner closes and the user is met with an empty page. In order to open the scanner again, the user must refresh the page. However, this action can be changed according to the developer’s wishes as indicated above.</p>
+</blockquote>
+
+<h2 id="next-steps">Next Steps</h2>
+
+<p>Now that you got the most basic functionality of the MRZ Scanner up and running, it’s time to explore the many ways in which you can customize the MRZ Scanner! To learn more about this, please visit [Customizing the MRZ Scanner].</p>
