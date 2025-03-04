@@ -5,10 +5,10 @@ keywords: Mobile Web Capture, documentation
 description: Mobile Web Capture Documentation Homepage
 ---
 
-# Mobile Web Capture
+# MRZ Scanner for Web
 
 - [Introduction]({{ site.introduction }}index.html)
-- Getting started
+- Getting Started
     - [System Requirements]({{ site.gettingstarted }}sys_requirement.html)
     - [License]({{ site.gettingstarted }}license.html)
     - [Adding the Dependency]({{ site.gettingstarted }}add_dependency.html)

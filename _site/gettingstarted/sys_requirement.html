@@ -1,0 +1,72 @@
+<h1 id="system-requirements">System Requirements</h1>
+
+<p>The MRZ Scanner for Web solution is built upon the JavaScript edition of two foundational SDK products, the <a href="https://www.dynamsoft.com/label-recognition/overview/" target="_blank">Dynamsoft Label Recognizer</a> (DLR) and the <a href="https://www.dynamsoft.com/label-recognition/overview/" target="_blank">Dynamsoft Code Parser</a> (DCP). In order to make all of the features of this solution work, the following requirememts are needed:</p>
+
+<ol>
+  <li>
+    <p><strong>Secure context (HTTPS deployment)</strong></p>
+
+    <p>When deploying your application / website for production, make sure to serve it via a secure HTTPS connection. This is required for two reasons</p>
+  </li>
+</ol>
+
+<ul>
+  <li>Access to the camera video stream is only granted in a security context. Most browsers impose this restriction.
+    <blockquote>
+      <p>Some browsers like Chrome may grant the access for <code class="language-plaintext highlighter-rouge">http://127.0.0.1</code> and <code class="language-plaintext highlighter-rouge">http://localhost</code> or even for pages opened directly from the local disk (<code class="language-plaintext highlighter-rouge">file:///...</code>). This can be helpful for temporary development and testing.</p>
+    </blockquote>
+  </li>
+  <li>Dynamsoft licenses require a secure context to work, unless a special offline license is used.</li>
+</ul>
+
+<ol>
+  <li><strong><code class="language-plaintext highlighter-rouge">WebAssembly</code>, <code class="language-plaintext highlighter-rouge">Blob</code>, <code class="language-plaintext highlighter-rouge">URL</code>/<code class="language-plaintext highlighter-rouge">createObjectURL</code>, <code class="language-plaintext highlighter-rouge">Web Workers</code></strong></li>
+</ol>
+
+<p>The above four browser features are required for the SDKs to work.</p>
+
+<h2 id="supported-browsers">Supported Browsers</h2>
+
+<p>The following table is a list of supported browsers based on the above requirements:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Browser Name</th>
+      <th style="text-align: center">Version</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">Chrome</td>
+      <td style="text-align: center">v78+</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Firefox</td>
+      <td style="text-align: center">v79+ (v55+ on iOS/Android)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Safari</td>
+      <td style="text-align: center">v15+</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Edge</td>
+      <td style="text-align: center">v92+</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Apart from the browsers, the operating systems may impose some limitations of their own that could restrict the use of the SDKs.</p>
+
+<blockquote>
+  <p>Note:</p>
+
+  <p>iOS 14.3+ is required for camera video streaming in Chrome and Firefox or apps using Webviews.</p>
+</blockquote>
+
+<h2 id="references">References</h2>
+
+<ul>
+  <li><a href="https://www.dynamsoft.com/capture-vision/docs/web/programming/javascript/user-guide/mrz-scanner.html#system-requirements">Dynamsoft Label Recognizer - System Requirements</a></li>
+  <li><a href="https://www.dynamsoft.com/code-parser/docs/web/programming/javascript/user-guide/#system-requirements">Dynamsoft Code Parser - System Requirements</a></li>
+</ul>
