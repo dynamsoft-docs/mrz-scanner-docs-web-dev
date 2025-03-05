@@ -86,6 +86,23 @@ const mrzscanner = new Dynamsoft.MRZScanner({
 
 7. **enableMultiFrameCrossFilter** - The multi-frame result cross filter is a feature that ensures the library relays the most accurate results. It is disabled by default, so if you choose to enable it, please note that there could be a slight time cost.
 
+### Configuring the MRZ Scanner View
+
+Now that we have gone through all the properties that make up the MRZScannerViewConfig, let's see them in action:
+
+```js
+const mrzscanner = new Dynamsoft.MRZScanner({
+   license: "YOUR-LICENSE-KEY",
+   scannerViewConfig: {
+      showScanGuide: false, // hides the scan guide frame; true by default
+      showUploadImage: false, // hides the load image icon that shows up in the toolbar at the top of the view; true by default
+      showFormatSelector: false, // hides the format selector box if more than two MRZ types are assigned; true by default
+      showSoundToggle: false, // hides the sound icon that allows the user to control whether a beep is played once an MRZ is recognized; true by default
+      enableMultiFrameCrossFilter: false, // turning the filter off could improve the speed but at the cost of ; true by default
+   }
+});
+```
+
 ## MRZResultViewConfig
 
 **MRZResultViewConfig** is used to display the parsed MRZ results into readable fields, saving time and resources needed to build your own viewer. In this section, we will explore the different UI elements of the result view and how they can be configured.

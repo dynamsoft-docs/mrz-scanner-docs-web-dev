@@ -59,12 +59,21 @@ GEM
       safe_yaml (~> 1.0)
       terminal-table (>= 1.8, < 4.0)
       webrick (~> 1.7)
+    jekyll-readme-index (0.3.0)
+      jekyll (>= 3.0, < 5.0)
+    jekyll-redirect-from (0.16.0)
+      jekyll (>= 3.3, < 5.0)
+    jekyll-relative-links (0.7.0)
+      jekyll (>= 3.3, < 5.0)
     jekyll-sass-converter (3.1.0)
       sass-embedded (~> 1.75)
+    jekyll-seo-tag (2.8.0)
+      jekyll (>= 3.8, < 5.0)
     jekyll-sitemap (1.4.0)
       jekyll (>= 3.7, < 5.0)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
+    jekyll-webp (1.0.0)
     jemoji (0.13.0)
       gemoji (>= 3, < 5)
       html-pipeline (~> 2.2)
@@ -81,6 +90,8 @@ GEM
     logger (1.6.5)
     mercenary (0.4.0)
     minitest (5.25.4)
+    net (0.3.3)
+      activesupport
     nokogiri (1.18.2-arm64-darwin)
       racc (~> 1.4)
     pathutil (0.16.2)
@@ -110,8 +121,16 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll
-  jekyll-sitemap
+  jekyll-readme-index
+  jekyll-redirect-from
+  jekyll-relative-links
+  jekyll-seo-tag
+  jekyll-sitemap (~> 1.4)
+  jekyll-webp
   jemoji
+  kramdown-parser-gfm
+  net
+  uri
 
 BUNDLED WITH
    2.4.10

@@ -72,7 +72,7 @@ The **MRZScannerView** is the main view of the solution which displays the camer
 
 Here is a quick look at default look of the **MRZScannerView**:
 
-<PLACE PHOTO HERE ONCE DESIGN IS FULLY COMPLETE>
+<!-- <PLACE PHOTO HERE ONCE DESIGN IS FULLY COMPLETE> -->
 
 #### MRZResultView
 
@@ -82,7 +82,7 @@ Included with those two things are two buttons, one that allows the user to scan
 
 Here is a quick look at the default look of the **MRZResultView**:
 
-<PLACE PHOTO HERE ONCE DESIGN IS FULLY COMPLETE>
+<!-- <PLACE PHOTO HERE ONCE DESIGN IS FULLY COMPLETE> -->
 
 ## System Requirements
 

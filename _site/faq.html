@@ -1,1 +1,863 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+    <title>Mobile Web Capture - FAQ</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Cache-Control" content="max-age=7200" />
+    <meta name="description" content="This is the FAQ page of Mobile Web Capture." />
+    <meta name="keywords" content="faq" /><link href="https://www.dynamsoft.com/mrz-scanner/docs/faq.html" rel="canonical"><link rel="preload" as="font" href="/mrz-scanner/docs/assets/font-face/Oswald-Regular.ttf" type="font/ttf" crossorigin="anonymous">
+    <link rel="preload" as="font" href="/mrz-scanner/docs/assets/font-face/OpenSans-Regular.woff" type="font/woff" crossorigin="anonymous">
+    <link rel="preload" as="font" href="/mrz-scanner/docs/assets/font-face/fontawesome-webfont.woff2" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" as="font" href="/mrz-scanner/docs/assets/font-face/Oswald-Light.ttf" type="font/ttf" crossorigin="anonymous">
+    <link rel="preload" as="font" href="/mrz-scanner/docs/assets/font-face/OpenSans-Semibold.woff" type="font/woff" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="/mrz-scanner/docs/assets/css/dm-style.min.css?v=1741134728" />
+    <link rel="stylesheet" href="/mrz-scanner/docs/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/mrz-scanner/docs/assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/webres/wwwroot/css/docs/basis-bs.min.css?v=1741134728" />
+    <link rel="stylesheet" href="/webres/wwwroot/css/header_bs.min.css" />
+    <link rel="stylesheet" href="/webres/wwwroot/css/docs/basis.min.css?v=1741134728" />
+    <link rel="stylesheet" href="/webres/wwwroot/css/docs/footer.css" /><style>
+            .headCounter h2:before { content: ''!important; padding-right: 0px!important; }
+            .headCounter h2 { counter-reset: none!important; counter-increment: none!important; }
+            .headCounter h3:before { content: ''!important; padding-right: 0px!important; }
+            .headCounter h3 { counter-reset: none!important; counter-increment: none!important; }
+            .headCounter h4:before { content: ''!important; padding-right: 0px!important; }
+            .headCounter h4 { counter-increment: none!important; }
+        </style><script type="text/javascript" src="/webres/wwwroot/lib/mermaid/dist/mermaid.min.js"></script>
+    <script type="text/javascript" src="/mrz-scanner/docs/assets/js/jquery-3.5.0.min.js"></script>
+    <script type="text/javascript" src="/mrz-scanner/docs/assets/js/bootstrap.min.js"></script>
+    <script src="/webres/wwwroot/js/util.min.js"></script>
+    <script src="/webres/wwwroot/js/site.min.js"></script>
+    <script src="/webres/wwwroot/js/header.min.js"></script>
+    <script type="text/javascript" src="/mrz-scanner/docs/assets/js/ds-jquery-bs.min.js"></script><script type="text/javascript" src="/mrz-scanner/docs/assets/js/docsLangLatestVersion.js?v=1741134728"></script>
+    <script type="text/javascript" src="/webres/wwwroot/js/docs/index-banner.min.js?v=1741134728"></script>
+    <script type="text/javascript" src="/webres/wwwroot/js/docs/historymanage.min.js?v=1741134728"></script><script type="text/javascript" src="/webres/wwwroot/js/docs/layout.min.js?v=1741134728"></script>
+    <script type="text/javascript" src="/mrz-scanner/docs/assets/js/anchor.min.js"></script></head>
+<body class="" isDCV="false"><header id="dynamsoft-header">
+    <div id="overall-header">
+        <!--xs-header-->
+        <div id="xsHeader" class="show-block-sm show-block-md">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="xsMenu">
+                            <div class="xsMenuToggle">
+                                <div class="icon-menu">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <div class="icon-close">×</div>
+                            </div>
+                            <div class="search-icon">
+                                <a href="javascript:;"></a>
+                            </div>
+                            <div class="ds-logo">
+                                <a href="https://www.dynamsoft.com"></a>
+                            </div>
+                            <div id="cp-header">
+                                <div id="CPHeader-Container">
+                                    <div id="action-nav">
+                                        <div class="action-signin">
+                                            <div class="header-visitor" style="display: none;">
+                                                <a class="fr textUpperCase" href="#">
+                                                    <i class="icon-signin"></i>
+                                                </a>
+                                            </div>
+                                            <div class="header-signin">
+                                                <div class="userbox pr fr">
+                                                    <div class="user-profile">
+                                                        <label class="username" id="lblusername"></label>
+                                                    </div>
+                                                    <div class="popup userbox-more fr pa">
+                                                        <div class="arrow-up"></div>
+                                                        <ul>
+                                                            <li><a href="https://www.dynamsoft.com/customer/license/trialLicense">Request trial license</a></li>
+                                                            <li><a href="https://www.dynamsoft.com/downloads/">Download SDKs</a></li>
+                                                            <li class="hasDivideLine"><a href="https://www.dynamsoft.com/purchase-center/">Get pricing</a></li>
+                                                            <li><a href="https://www.dynamsoft.com/customer/order/list">Orders and licenses</a></li>
+                                                            <li class="hasDivideLine"><a href="https://www.dynamsoft.com/customer/account/contacts">Invite your team</a></li>
+                                                            <li style="display: list-item;"><a href="https://www.dynamsoft.com/sales/">Sales Portal</a></li>
+                                                            <li><a href="#" role="button" onclick="logout(event)">Logout</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="xsMenuList">
+                <div class="xsMenuItem">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <p>PRODUCTS</p>
+                                <div class="xsSubMenu">
+                                    <ul>
+                                        <li><a href="https://www.dynamsoft.com/web-twain/overview/">Dynamic Web TWAIN</a></li>
+                                        <li><a href="https://www.dynamsoft.com/use-cases/mobile-web-capture-sdk/">Mobile Web Capture</a></li>
+                                    </ul>
+                                    <div class="divider"></div>
+                                    <ul>
+                                        <li><a href="https://www.dynamsoft.com/barcode-reader/sdk-javascript/">Barcode Reader for Web</a></li>
+                                        <li><a href="https://www.dynamsoft.com/barcode-reader/sdk-mobile/">Barcode Reader for Mobile</a></li>
+                                        <li><a href="https://www.dynamsoft.com/barcode-reader/sdk-desktop-server/">Barcode Reader for Server/Desktop</a></li>
+                                        <li><a href="https://www.dynamsoft.com/use-cases/batch-barcode-scanning/">Customize for Batch Scanning</a></li>
+                                    </ul>
+                                    <div class="divider"></div>
+                                    <ul>
+                                        <li><a href="https://www.dynamsoft.com/use-cases/mrz-scanner/">MRZ Scanner</a></li>
+                                    </ul>
+                                    <div class="divider"></div>
+                                    <ul>
+                                        <li><a href="https://www.dynamsoft.com/products/">See All Products</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="xsMenuItem">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <p>DEMOS</p>
+                                <div class="xsSubMenu">
+                                    <ul>
+                                        <li><a href="https://demo.dynamsoft.com/web-twain/">Scan Documents from Scanners</a></li>
+                                        <li><a href="https://demo.dynamsoft.com/mobile-web-capture/">Capture Documents from Cameras in Mobile Browsers</a></li>
+                                    </ul>
+                                    <div class="divider"></div>
+                                    <ul>
+                                        <li><a href="https://demo.dynamsoft.com/barcode-reader-js/">Scan Barcodes from Video</a></li>
+                                        <li><a href="https://demo.dynamsoft.com/barcode-reader/">Scan Barcodes from Images</a></li>
+                                        <li><a href="https://apps.apple.com/us/app/dynamsoft-barcode-scanner-demo/id1120581630">Scan Barcodes on iOS</a></li>
+                                        <li><a href="https://play.google.com/store/apps/details?id=com.dynamsoft.demo.dynamsoftbarcodereaderdemo">Scan Barcodes on Android</a></li>
+                                    </ul>
+                                    <div class="divider"></div>
+                                    <ul>
+                                        <li><a href="https://demo.dynamsoft.com/solutions/mrz-scanner/">MRZ Scanner Web Demo</a></li>
+                                        <li><a href="https://apps.apple.com/us/app/dynamsoft-mrz-scanner/id6736854735">MRZ Scanner on iOS</a></li>
+                                        <li><a href="https://play.google.com/store/apps/details?id=com.dynamsoft.mrzscanner">MRZ Scanner on Android</a></li>
+                                    </ul>
+                                    <div class="divider"></div>
+                                    <ul>
+                                        <li><a href="https://demo.dynamsoft.com/">See All Demos</a></li>
+                                    </ul>
+                                    <a href="https://outlook.office365.com/owa/calendar/MeetingService@dynamsoft.com/bookings/s/CM_pKzzf4U6GdejJ4dB71Q2" target="_blank" class="orange-border-btn mt20 book-meeting-btn">BOOK A SALES MEETING</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="xsMenuItem">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <p>DEVELOPERS</p>
+                                <div class="xsSubMenu">
+                                    <ul>
+                                        <li><a href="https://demo.dynamsoft.com/">Try Online Demo</a></li>
+                                        <li><a href="https://www.dynamsoft.com/downloads/">Download Trial SDK</a></li>
+                                        <li><a href="https://www.dynamsoft.com/customer/license/trialLicense/">Request Trial License</a></li>
+                                        <li><a href="https://www.dynamsoft.com/docs/">Documentation</a></li>
+                                        <li><a href="https://github.com/dynamsoft/">GitHub Repo</a></li>
+                                        <li><a href="https://www.dynamsoft.com/codepool/">Dev Blog</a></li>
+                                    </ul>
+                                    <a href="https://www.dynamsoft.com/developer/" class="orange-border-btn mt20">VISIT DEVELOPER CENTER</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="xsMenuItem">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <p>Use Cases</p>
+                                <div class="xsSubMenu">
+                                    <ul>
+                                        <li><a href="https://www.dynamsoft.com/use-cases/id-scanning/">ID Scanning</a></li>
+                                        <li><a href="https://www.dynamsoft.com/use-cases/inventory-management/">Inventory Management</a></li>
+                                        <li><a href="https://www.dynamsoft.com/use-cases/customer-onboarding/">Client Onboarding</a></li>
+                                        <li><a href="https://www.dynamsoft.com/use-cases/mrz-scanner/">MRZ Scanner</a></li>
+                                    </ul>
+                                    <div class="divider"></div>
+                                    <ul>
+                                        <li><a href="https://www.dynamsoft.com/industries/financial-services/">Financial Services</a></li>
+                                        <li><a href="https://www.dynamsoft.com/industries/manufacturing/">Manufacturing</a></li>
+                                        <li><a href="https://www.dynamsoft.com/industries/logistics/">Logistics</a></li>
+                                        <li><a href="https://www.dynamsoft.com/industries/retail/">Retail</a></li>
+                                        <li><a href="https://www.dynamsoft.com/industries/healthcare/">Healthcare</a></li>
+                                    </ul>
+                                    <div class="divider"></div>
+                                    <a href="https://www.dynamsoft.com/use-cases/">See All Use Cases</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="xsMenuItem">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <p>COMPANY</p>
+                                <div class="xsSubMenu">
+                                    <ul>
+                                        <li><a href="https://www.dynamsoft.com/company/customers/">Customer Stories</a></li>
+                                        <li><a href="https://www.dynamsoft.com/company/about/">About Us</a></li>
+                                        <li><a href="https://www.dynamsoft.com/company/news/">News</a></li>
+                                        <li><a href="https://www.dynamsoft.com/company/awards/">Awards</a></li>
+                                        <li><a href="https://www.dynamsoft.com/company/security/">Security</a></li>
+                                        <li><a href="https://www.dynamsoft.com/company/customer-service/">Customer Support</a></li>
+                                        <li><a href="https://www.dynamsoft.com/blog/">Blog</a></li>
+                                        <li><a href="https://www.dynamsoft.com/company/partner-program/">Partner Program</a></li>
+                                    </ul>
+                                    <a href="https://www.dynamsoft.com/contact/" class="orange-border-btn mt20">CONTACT US</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="xsMenuItem" href="https://www.dynamsoft.com/downloads/">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <p>DOWNLOAD 30-DAY FREE TRIAL</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a class="xsMenuItem" href="https://www.dynamsoft.com/purchase-center/">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <p>PRICING</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="search-bar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <input type="text" name="search" value="" placeholder="Search" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="xsMenuMask">
+        </div>
+        <div id="mdHeader" class="show-block-lg show-block-xl">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <a class="ds-logo" href="https://www.dynamsoft.com"></a>
+                        <ul id="mdMenu" class="clearfix">
+                            <li>
+                                <a class="mdMenuToggle proMenu textUpperCase" href="#" role="button">Products <i class="icon-orange-angle"></i></a>
+                            </li>
+                            <li>
+                                <a class="mdMenuToggle solutionMenu textUpperCase" href="#" role="button">Use Cases <i class="icon-orange-angle"></i></a>
+                            </li>
+                            <li style="margin-right: 0!important;"><a class="mdMenuToggle companyMenu textUpperCase" href="#" role="button">Company <i class="icon-orange-angle"></i></a></li>
+                            <div id="cp-header">
+                                <div id="CPHeader-Container">
+                                    <ul id="action-nav">
+                                            <li class="action-buttons hideSmall">
+                                            </li>
+                                        <li class="action-signin">
+                                            <div class="header-visitor">
+                                                <a class="fr" href="#">
+                                                    <i class="icon-login"></i> Log in
+                                                </a>
+                                            </div>
+                                            <div class="header-signin">
+                                                <div class="userbox pr fr">
+                                                    <div class="user-profile">
+                                                        <label class="username" id="lblusername"></label>
+                                                    </div>
+                                                    <div class="popup userbox-more fr pa">
+                                                        <div class="arrow-up"></div>
+                                                        <ul>
+                                                            <li><a href="https://www.dynamsoft.com/customer/license/trialLicense">Request trial license</a></li>
+                                                            <li><a href="https://www.dynamsoft.com/downloads/">Download SDKs</a></li>
+                                                            <li><a href="https://www.dynamsoft.com/purchase-center/">Get pricing</a></li>
+                                                            <li class="divideLine"></li>
+                                                            <li><a href="https://www.dynamsoft.com/customer/order/list">Orders and licenses</a></li>
+                                                            <li><a href="https://www.dynamsoft.com/customer/account/contacts">Invite your team</a></li>
+                                                            <li class="divideLine"></li>
+                                                            <li class="hideItem"><a href="https://www.dynamsoft.com/sales/">Sales Portal</a></li>
+                                                            <li class="divideLine"></li>
+                                                            <li><a href="#" role="button" onclick="logout(event)">Logout</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="pcMenu" class="container show-block-lg show-block-xl">
+        <div class="row">
+            <div class="col-12 pr">
+                <div id="solutionSubMenu" class="clearfix hide-sm headSubMenu">
+                    <div class="subMenuContent">
+                        <div>
+                            <p class="title">USE CASES</p>
+                            <a href="https://www.dynamsoft.com/use-cases/id-scanning/" class="menuLink">
+                                <p>ID Scanning</p>
+                            </a>
+                            <a href="https://www.dynamsoft.com/use-cases/inventory-management/" class="menuLink">
+                                <p>Inventory Management</p>
+                            </a>
+                            <a href="https://www.dynamsoft.com/use-cases/customer-onboarding/" class="menuLink">
+                                <p>Client Onboarding</p>
+                            </a>
+                        </div>
+                        <div>
+                            <p class="title">INDUSTRIES</p>
+                            <a href="https://www.dynamsoft.com/industries/financial-services/" class="menuLink">
+                                <p>Financial Services</p>
+                            </a>
+                            <a href="https://www.dynamsoft.com/industries/manufacturing/" class="menuLink">
+                                <p>Manufacturing</p>
+                            </a>
+                            <a href="https://www.dynamsoft.com/industries/logistics/" class="menuLink">
+                                <p>Logistics</p>
+                            </a>
+                            <a href="https://www.dynamsoft.com/industries/retail/" class="menuLink">
+                                <p>Retail</p>
+                            </a>
+                            <a href="https://www.dynamsoft.com/industries/healthcare/" class="menuLink">
+                                <p>Healthcare</p>
+                            </a>
+                        </div>
+                        <div class="caseStudy">
+                            <a href="https://www.dynamsoft.com/use-cases/" class="caseLink">
+                                <img src="https://www.dynamsoft.com/webres/wwwroot/images/header/see-all-solutions.jpg" alt="Solutions" />
+                            </a>
+                            <a href="https://www.dynamsoft.com/use-cases/">
+                                <p><u>See All Use Cases</u></p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div id="subMenu" class="clearfix hide-sm headSubMenu">
+                    <div class="subMenuContent">
+                        <div>
+                            <a class="title" href="https://www.dynamsoft.com/document-scanning-solutions/">DOCUMENT CAPTURE SDKS</a>
+                            <a href="https://www.dynamsoft.com/web-twain/overview/" class="menuLink">
+                                <p>Dynamic Web TWAIN</p>
+                                <span class="sub">Cross-browser scanner SDK</span>
+                            </a>
+                            <a href="https://www.dynamsoft.com/use-cases/mobile-web-capture-sdk/" class="menuLink">
+                                <p>Mobile Web Capture</p>
+                                <span class="sub">Captures images of documents from mobile cameras</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a class="title" href="https://www.dynamsoft.com/barcode-reader/overview/">BARCODE SCANNING SDKS</a>
+                            <a href="https://www.dynamsoft.com/barcode-reader/sdk-javascript/" class="menuLink">
+                                <p>Barcode Reader for Web</p>
+                                <span class="sub">JavaScript</span>
+                            </a>
+                            <a href="https://www.dynamsoft.com/barcode-reader/sdk-mobile/" class="menuLink">
+                                <p>Barcode Reader for Mobile</p>
+                                <span class="sub">for native apps</span>
+                            </a>
+                            <a href="https://www.dynamsoft.com/barcode-reader/sdk-desktop-server/" class="menuLink">
+                                <p>Barcode Reader for Server/Desktop</p>
+                                <span class="sub">C / C++ / .NET / Python / Java</span>
+                            </a>
+                            <a href="https://www.dynamsoft.com/use-cases/batch-barcode-scanning/" class="menuLink">
+                                <p>Customize for Batch Scanning <span class="right-arrow"></span></p>
+                            </a>
+                        </div>
+                        <div class="flex-column d-flex">
+                            <a class="title" href="https://www.dynamsoft.com/label-recognition/overview/">INTELLIGENT OCR SDKS</a>
+                            <a href="https://www.dynamsoft.com/use-cases/mrz-scanner/" class="menuLink">
+                                <p>MRZ Scanner</p>
+                                <span class="sub">for passports, ID cards</span>
+                            </a>
+                            <a href="https://www.dynamsoft.com/products/" class="seeAllLink mt-auto">
+                                <u>See All Products</u>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div id="demoSubMenu" class="clearfix hide-sm headSubMenu">
+                    <div class="subMenuContent">
+                        <div>
+                            <p class="title">DOCUMENT CAPTURE</p>
+                            <a href="https://demo.dynamsoft.com/web-twain/" target="_blank" class="menuLink">
+                                <p>
+                                    Scan Documents from Scanners
+                                </p>
+                                <span class="sub">[Browser-Side]</span>
+                            </a>
+                            <a href="https://demo.dynamsoft.com/mobile-web-capture/" target="_blank" class="menuLink">
+                                <p>Capture Documents from Cameras in Mobile Browsers</p>
+                                <span class="sub">[Browser-Side]</span>
+                            </a>
+                            <a href="https://demo.dynamsoft.com/document-viewer/" target="_blank" class="menuLink">
+                                <p>View and Annotate PDF</p>
+                                <span class="sub">[Browser-Side]</span>
+                            </a>
+                        </div>
+                        <div>
+                            <p class="title">BARCODE SCANNING</p>
+                            <a href="https://demo.dynamsoft.com/barcode-reader-js/" target="_blank" class="menuLink">
+                                <p>Scan Barcodes from Video</p>
+                                <span class="sub">[Browser-Side]</span>
+                            </a>
+                            <a href="https://demo.dynamsoft.com/barcode-reader/" target="_blank" class="menuLink">
+                                <p>Scan Barcodes from Images</p>
+                                <span class="sub">[Server-Side]</span>
+                            </a>
+                            <a href="https://apps.apple.com/us/app/dynamsoft-barcode-scanner-demo/id1120581630" target="_blank" class="menuLink">
+                                <p>Scan Barcodes on iOS</p>
+                                <span class="sub">[Mobile Native]</span>
+                            </a>
+                            <a href="https://play.google.com/store/apps/details?id=com.dynamsoft.demo.dynamsoftbarcodereaderdemo" target="_blank" class="menuLink">
+                                <p>Scan Barcodes on Android</p>
+                                <span class="sub">[Mobile Native]</span>
+                            </a>
+                        </div>
+                        <div class="flex-column d-flex">
+                            <p class="title">INTELLIGENT OCR</p>
+                            <a href="https://demo.dynamsoft.com/solutions/mrz-scanner/" target="_blank" class="menuLink">
+                                <p>MRZ Scanner Web Demo</p>
+                                <span class="sub">[Browser-Side]</span>
+                            </a>
+                            <a href="https://apps.apple.com/us/app/dynamsoft-mrz-scanner/id6736854735" target="_blank" class="menuLink">
+                                <p>MRZ Scanner on iOS</p>
+                                <span class="sub">[Mobile Native]</span>
+                            </a>
+                            <a href="https://play.google.com/store/apps/details?id=com.dynamsoft.mrzscanner" target="_blank" class="menuLink">
+                                <p>MRZ Scanner on Android</p>
+                                <span class="sub">[Mobile Native]</span>
+                            </a>
+                            <div style="padding: 10px;" class="mt-auto">
+                                <a href="https://outlook.office365.com/owa/calendar/MeetingService@dynamsoft.com/bookings/s/CM_pKzzf4U6GdejJ4dB71Q2" target="_blank" class="orange-border-btn book-meeting-btn">BOOK A SALES MEETING</a>
+                            </div>
+                            <a href="https://demo.dynamsoft.com/" target="_blank" class="seeAllLink">
+                                <u>See All Demos</u>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div id="developerSubMenu" class="clearfix hide-sm headSubMenu">
+                    <div class="subMenuContent">
+                        <div>
+                            <a href="https://www.dynamsoft.com/customer/license/trialLicense/" class="menuLink">
+                                <p>Request Trial License</p>
+                            </a>
+                            <a href="https://demo.dynamsoft.com/" target="_blank" class="menuLink">
+                                <p>Try Online Demo</p>
+                            </a>
+                            <a href="https://www.dynamsoft.com/downloads/" class="menuLink">
+                                <p>Download Trial SDK</p>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="https://www.dynamsoft.com/docs/" class="menuLink">
+                                <p>Documentation</p>
+                            </a>
+                            <a href="https://github.com/dynamsoft/" target="_blank" class="menuLink">
+                                <p>GitHub Repo</p>
+                            </a>
+                            <a href="https://www.dynamsoft.com/codepool/" target="_blank" class="menuLink">
+                                <p>Dev Blog</p>
+                            </a>
+                        </div>
+                        <div class="caseStudy">
+                            <a href="https://www.dynamsoft.com/developer/" class="caseLink">
+                                <img src="https://www.dynamsoft.com/webres/wwwroot/images/developer/developer-nav.jpg" alt="Developer center" />
+                            </a>
+                            <a href="https://www.dynamsoft.com/developer/">
+                                <u>Developer Center</u>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div id="companySubMenu" class="clearfix hide-sm headSubMenu">
+                    <div class="subMenuContent">
+                        <div>
+                            <a href="https://www.dynamsoft.com/contact/" class="menuLink">
+                                <p>Contact Us</p>
+                            </a>
+                            <a href="https://www.dynamsoft.com/company/about/" class="menuLink">
+                                <p>About Us</p>
+                            </a>
+                            <a href="https://www.dynamsoft.com/company/news/" class="menuLink">
+                                <p>News</p>
+                            </a>
+                            <a href="https://www.dynamsoft.com/company/awards/" class="menuLink">
+                                <p>Awards</p>
+                            </a>
+                            <a href="https://www.dynamsoft.com/company/security/" class="menuLink">
+                                <p>Security</p>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="https://www.dynamsoft.com/company/customers/" class="menuLink">
+                                <p>Customer Stories</p>
+                            </a>
+                            <a href="https://www.dynamsoft.com/company/customer-service/" class="menuLink">
+                                <p>Customer Support</p>
+                            </a>
+                            <a href="https://www.dynamsoft.com/blog/" class="menuLink">
+                                <p>Blog</p>
+                            </a>
+                            <a href="https://www.dynamsoft.com/company/partner-program/" class="menuLink">
+                                <p>Partner Program</p>
+                            </a>
+                        </div>
+                        <div class="caseStudy">
+                            <a href="https://www.dynamsoft.com/company/customers/" class="caseLink">
+                                <img src="https://www.dynamsoft.com/assets/images/img-banner/caseStudyImage/case-study-ibm-windows-banner.png" alt="IBM banner" />
+                            </a>
+                            <a href="https://www.dynamsoft.com/company/customers/">
+                                <u>Customer Stories</u>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div id="menuMask"></div><div id="CaptureVision" class="main">
+  <div id="CaptureVisionMenu" class="productMenu">
+      <div class="container pcProductMenu">
+          <div class="row">
+              <div class="col-12">
+                  <ul class="breadcrumb menu-breadcrumb">
+                      <li class="breadcrumb-item"><a href="/"><i class="icon-home"></i></a></li>
+                      <li class="breadcrumb-item"><a href="/products/">Products</a></li>
+                      <li class="breadcrumb-item overview"><a href="/use-cases/mrz-scanner/">Dynamsoft MRZ Scanner</a></li>
+                      <li class="breadcrumb-item active"><a href="">Docs</a></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <div class="container mobileProductMenu">
+          <div class="row">
+              <div class="col-12">
+                  <div class="productLogo" style="color:#fe8e14!important;font:10px">Dynamsoft MRZ Scanner <i class="icon-orange-angle"></i></div>
+              </div>
+          </div>
+      </div>
+      <div class="mobileProductDetailMenu">
+          <div class="container">
+              <div class="row">
+                  <div class="col-12">
+                      <ul class="menuList">
+                          <li class="item"><a href="">Documentation</a></li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div><div class="sideBarIcon"><i class="fa fa-list" style="margin-right: 5px;"></i> Table of contents</div>
+    <div class="container" id="categoryMenuTree">
+        <div class="row">
+            <main class="docContainer col-xs-12 col-md-9">
+                <div id="docHead" class = "head row hide-xs hide-sm"><div class="crumbsBox">
+    <div>
+        <div id="crumbs">
+            <ul><li><a class="bluelink" href = "/mrz-scanner/docs/introduction/">Documentation</a></li></ul>
+        </div></div>
+</div><div class="iconsBox">
+    <div><a href="https://github.com/dynamsoft-docs/mrz-scanner-docs/blob/main/faq.md" class="editLinkColour"><img src="/mrz-scanner/docs/assets//img-icon/Edit-pencil-write-2.svg" width="30px" height="30px" style="vertical-align: middle;" title="Edit this page" data-placement="bottom" data-toggle="tooltip" data-html="true"  /></a><span class="rightMenuControlBtn" style="margin-left: 15px;"><img src="/mrz-scanner/docs/assets//img-icon/Menu-navigation-menu-4.svg" width="30px" height="30px" style="vertical-align: middle;"  title="Collapse Sidebar" data-placement="bottom" data-toggle="tooltip" data-html="true" /></span>
+    </div>
+</div></div>
+                <div class="main row showRightSideMenu" id="articleContent" data-needh3="true">
+                    <div class="content markdown-body headCounter noTitleIndex col-xs-12 col-md-12 col-lg-9 col-xl-10 showRightSideMenu"><article>
+                            
+
+                        </article>
+                    </div><div class="rightSideMenu col-xs-12 col-md-12 col-lg-3 col-xl-2  hide-md hide-sm hide-xs showRightSideMenu"><div id="compatibleInfo">
+                            <p>This page is compatible for:</p>
+                            <p class="compatibleCurVersion"></p>
+                        </div><div id="feedbackFooter" style="color: #306877;">
+                            <p class="fontOswald">Is this page helpful? </p>
+                            <a href="javascript:void(0)" style="color: #306877;" class="recordLink smileLink" onclick="UsefulRecord(true)"><img class="icon-smile" src="/webres/wwwroot/images/docs/icon-smile.png" alt="Yes" />Yes</a>
+                            <a href="javascript:void(0)" style="color: #306877;" class="recordLink sadLink" onclick="UsefulRecord(false)"><img class="icon-sad" src="/webres/wwwroot/images/docs/icon-sad.png" alt="No" />No</a>
+                        </div>
+                        <hr /><p class="fontOswald" style="color: #306877;"> In this article: </p>
+                        <div id="AutoGenerateSidebar"></div></div>
+                </div>
+                <div class="main row" style="display: none; background: #f5f5f5;" id="loadingContent">
+                    <div class="loading" id="loadingLogin">
+                        <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+                    </div>
+                </div>
+            </main>
+            <aside class="sideBar col-xs-12 col-md-3 hide-xs hide-sm" data-nosnippet>
+                <div id="sideBarCnt">
+                    <div class="history list" id="categoryMenuTree_history"><p class="currentVersion fontOswald">latest version</p><ul class="otherVersions" style="display: none!important;"></ul>
+
+<span class="fullVersionHistory">
+    <ul class="fullVersionInfo"><li onclick="changeVersion(this)" data-editions="">Latest version(3.0)</li><li onclick="changeVersion(this)" data-editions="">Version 2.0</li><li class="hasChildLi" data-editions="">
+                    <div>Version 1.x <i class="icon-arrow"></i></div>
+                    <ul><li onclick="changeVersion(this)" data-editions="">Version 1.1</li></ul>
+                </li></ul>
+    <a class="fvChange fontOswald" href="javascript:;">Change +</a>
+</span>
+</div><div class="docSearchPart" style="margin-top: 30px;">
+                        <input id="txtSearch" class="search" type="text">
+                    </div><nav class="mainPage">
+                        <ul id="fullTreeMenuListContainer" name="listLevel1" data-nosnippet></ul>
+                    </nav>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <footer id="footerWrapper"><a href="javascript:void(0)" id="toTop"></a>
+<div class="footerBottomCnt">
+    <div class="docs-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="footer__inner">
+                        <div class="footer__item">
+                            <p>Use Cases</p>
+                            <ul class="products">
+                                <li>
+                                    <a class="whiteLink" href="https://www.dynamsoft.com/use-cases/driver-license/">Driver's License</a>
+                                </li>
+                                <li>
+                                    <a class="whiteLink" href="https://www.dynamsoft.com/use-cases/mobile-web-capture-sdk/">Mobile Web Capture</a>
+                                </li>
+                                <li>
+                                    <a class="whiteLink" href="https://www.dynamsoft.com/use-cases/mrz-scanner/">MRZ Scanner</a>
+                                </li>
+                                <li>
+                                    <a class="whiteLink" href="https://www.dynamsoft.com/panorama/batch-barcode-scanning/">Batch Barcode Scan</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer__item">
+                            <p>Resources</p>
+                            <ul class="resources">
+                                <li>
+                                    <a class="whiteLink" href="https://www.dynamsoft.com/barcode-dataset/">Barcode Dataset</a>
+                                </li>
+                                <li>
+                                    <a class="whiteLink" target="_blank" href="https://www.dynamsoft.com/Documents/barcode-test-sheet.pdf">Barcode Test Sheet</a>
+                                </li>
+                                <li>
+                                    <a class="whiteLink" href="https://www.dynamsoft.com/barcode-reader/barcode-types/">Barcode Types</a>
+                                </li>
+                                <li>
+                                    <a class="whiteLink" href="https://www.dynamsoft.com/docs/">Docs Center</a>
+                                </li>
+                                <li>
+                                    <a class="whiteLink" href="https://www.dynamsoft.com/codepool/">Developer Blog</a>
+                                </li>
+                                <li>
+                                    <a class="whiteLink" href="https://www.dynamsoft.com/company/license-agreement/">License Agreements</a>
+                                </li>
+                                <li>
+                                    <a class="whiteLink" target="_blank" href="https://www.dynamsoft.com/Products/Dynamsoft_Security_Whitepaper.pdf">Security White Paper</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer__item">
+                            <p>Free Tools</p>
+                            <ul class="tools">
+                                <li>
+                                    <a class="whiteLink" href="https://www.dynamsoft.com/tools/barcode-generator/">Barcode Generator</a>
+                                </li>
+                                <li>
+                                    <a class="whiteLink" href="https://www.dynamsoft.com/tools/mrz-generator/">MRZ Calculator</a>
+                                </li>
+                                <li>
+                                    <a class="whiteLink" href="https://www.dynamsoft.com/tools/upc-barcode-lookup/">UPC Lookup</a>
+                                </li>
+                                <li>
+                                    <a class="whiteLink" href="https://www.dynamsoft.com/demos/pdf-to-image-converter/">Image PDF Converter</a>
+                                </li>
+                                <li>
+                                    <a class="orangeLink fontOswald" href="https://www.dynamsoft.com/tools/">All Tools &gt;</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer__item">
+                            <p>Company</p>
+                            <ul class="company">
+                                <li>
+                                    <a class="whiteLink" href="https://www.dynamsoft.com/company/about/">About Us</a>
+                                </li>
+                                <li>
+                                    <a class="whiteLink" href="https://www.dynamsoft.com/blog/">Company Blog</a>
+                                </li>
+                                <li>
+                                    <a class="whiteLink" href="https://www.dynamsoft.com/company/policies/">Policies</a>
+                                </li>
+                                <li>
+                                    <a class="whiteLink" href="https://www.dynamsoft.com/partner/resellers/">Buy from a Reseller</a>
+                                </li>
+                                <li>
+                                    <a class="whiteLink" href="https://www.dynamsoft.com/company/careers/">Careers</a>
+                                </li>
+                                <li>
+                                    <a class="whiteLink" id="emailSubscription" href="https://www.dynamsoft.com/subscription/?email=">Email Subscription</a>
+                                </li>
+                                <li>
+                                    <a class="orangeLink fontOswald" href="https://www.dynamsoft.com/contact/">Contact Us &gt;</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footerBottom">
+        <div class="container">
+            <div class="row">
+                <div class="ct-lt hidden-xs col-sm-4">
+                    <a class="ds-white" href="https://www.dynamsoft.com"></a>
+                </div>
+                <div class="ct-ct col-xs-12 col-sm-8">
+                    <span class="sm-mr10"
+                        >© 2003–2025 Dynamsoft. All rights reserved.</span
+                    ><br class="visible-xs" />
+                    <a href="https://www.dynamsoft.com/privacy-statement/"
+                        >Privacy Statement</a
+                    >&nbsp;/&nbsp;<a
+                        href="https://www.dynamsoft.com/sitemap/"
+                        >Site Map</a
+                    ><span class="visible-lg">
+                        / <a href="https://www.dynamsoft.com/">Home</a> /
+                        <a
+                            href="https://www.dynamsoft.com/purchase-center/"
+                            >Purchase</a
+                        >
+                        /
+                        <a href="https://www.dynamsoft.com/contact/"
+                            >Support</a
+                        >
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</footer>
+
+    <script type="text/javascript">
+        var myMermaid = null
+        var mermaidInterval = setInterval(async function() {
+            if (mermaid) {
+                mermaid.initialize({ startOnLoad: false },);
+                await mermaid.run({
+                    querySelector: '.language-mermaid'
+                });
+                myMermaid = mermaid
+                clearInterval(mermaidInterval)
+            }
+        }, 100)
+    </script><script type="text/javascript">
+        var sideBarIframeSrc = "/mrz-scanner/docs/Hide_Tree_Page.html";
+        anchors.add();
+        PageCreateInit('true', 'true', '', 'true');
+    </script><!--Begin Comm100 Live Chat Code-->
+<div id="comm100-button-20242b05-3781-4d86-9b7f-fab63ddcdde3"></div>
+<script type="text/javascript">
+  var Comm100API=Comm100API||{};(function(t){function e(e){var a=document.createElement("script"),c=document.getElementsByTagName("script")[0];a.type="text/javascript",a.async=!0,a.src=e+t.site_id,c.parentNode.insertBefore(a,c)}t.chat_buttons=t.chat_buttons||[],t.chat_buttons.push({code_plan:"20242b05-3781-4d86-9b7f-fab63ddcdde3",div_id:"comm100-button-20242b05-3781-4d86-9b7f-fab63ddcdde3"}),t.site_id=90003305,t.main_code_plan="20242b05-3781-4d86-9b7f-fab63ddcdde3",e("https://vue.comm100.com/livechat.ashx?siteId="),setTimeout(function(){t.loaded||e("https://standby.comm100vue.com/livechat.ashx?siteId=")},5e3)})(Comm100API||{})
+</script>
+<!--End Comm100 Live Chat Code-->
+
+<script>
+  var _hsq = window._hsq = window._hsq || [];
+  _hsq.push(['setContentType', 'knowledge-article']);
+</script><script type="text/javascript">
+        function getCookie(name) {
+            var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+            return (arr = document.cookie.match(reg)) ? unescape(arr[2]) : null;
+        }
+        
+        $('#txtSearch').keydown(function(e) {
+            if (e.keyCode == 13) {
+                let product = getUrlVars(document.URL)["product"] ? getUrlVars(document.URL)["product"] : getCurrentUrlProductName(document.URL)
+                if (["dbr", "dlr", "dce", "dcp", "dcv", "ddn", "mrz"].indexOf(product) >= 0) {
+                    let lang = getCurrentUrlLang(document.URL, true)
+                    let reporType = ""
+                    if (lang && lang != "core") {
+                        lang = lang.toLowerCase().trim().split(",")[0]
+                        if (['javascript', 'js'].indexOf(lang) >= 0) {
+                            reporType = "web"
+                        }
+                        if (['objectivec-swift', 'android', 'objective-c', 'objc', 'swift', 'ios', 'react-native', 'maui', 'flutter', 'xamarin', 'cordova'].indexOf(lang) >= 0) {
+                            reporType = "mobile"
+                        }
+                        if (['c', 'cpp', 'c++', 'csharp', 'dotnet', 'java', 'python', 'cplusplus'].indexOf(lang) >= 0) {
+                            reporType = "server"
+                        }
+                    } else {
+                        reporType = "core"
+                    }
+
+                    var gscParam = ""
+                    if (product == "dcv") {
+                        gscParam = `&ref=${getRefName(lang)}`
+                    }
+                    window.location.href = "/" + getDoumentName(product) + "/docs/" + reporType + "/search.html?lang="+ lang + "&q=" + $('#txtSearch').val() + gscParam
+                } else {
+                    let preUrl = document.URL.split("/docs/")[0]
+                    window.location.href = preUrl + "/docs/search.html?q=" + $('#txtSearch').val()
+                }
+            }
+        })
+
+        function getRefName(lang) {
+            lang = lang.toLowerCase()
+            if (['javascript', 'js'].indexOf(lang) >= 0) {
+                return "web"
+            } else if (['objectivec-swift','objective-c', 'objc', 'swift', 'ios'].indexOf(lang) >= 0) {
+                return "ios"
+            } else if (['c', 'cpp', 'c++', 'cplusplus'].indexOf(lang) >= 0) {
+                return "c++"
+            } else if (['csharp', 'dotnet'].indexOf(lang) >= 0) {
+                return ".net"
+            } else {
+                return lang
+            }
+        }
+    </script>
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-538F83" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-538F83');</script> 
+    <!-- End Google Tag Manager -->
+</body>
+
+</html>

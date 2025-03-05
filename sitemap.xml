@@ -1,0 +1,56 @@
+---
+layout: null
+regenerate: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- assign pages = site.html_pages | where_exp:'doc','doc.sitemap != false' | where_exp:'doc','doc.url != "/Hide_Tree_Page.html"' -%}
+{%- for page in pages -%}
+{%- assign excludeFlag = false -%}
+{%- if page.url contains '-v' -%}
+	{%- assign candidateVersionStr = page.url |  split: '-v' -%}
+	{%- for tmpStr in candidateVersionStr offset:1 -%}
+		{%- assign tmpVer = tmpStr | split: '/' | first | replace: '.html', '' | strip -%}
+		{%- capture firstChar -%}
+			{{ tmpVer | truncate: 4 | replace:"...", "" }}
+		{%- endcapture -%}
+		{%- if firstChar >= "0" and firstChar <= "9" -%}
+      {%- assign excludeFlag = true -%}
+			{%- break -%}
+		{%- endif -%}
+	{%- endfor -%}
+{%- endif -%}
+
+{%- if page.ignore -%}
+	{%- assign excludeFlag = true -%}
+{%- endif -%}
+
+{%- if page.path contains 'programming-old/' -%}
+	{%- assign excludeFlag = true -%}
+{%- endif -%}
+
+{%- if site.docFullPath contains 'license-server/docs' and page.url contains 'schedule/stable' -%}
+	{%- assign excludeFlag = true -%}
+{%- endif -%}
+{%- if site.docFullPath contains 'web-twain/docs' and page.url contains 'indepth/faqs/develop' -%}	
+	{%- assign excludeFlag = true -%}
+{%- endif -%}
+{%- if page.url contains 'search.html' or page.url contains 'search-test.html' -%}	
+	{%- assign excludeFlag = true -%}
+{%- endif -%}
+
+{%- assign docFullPath = site.docFullPath -%}
+{%- assign docFullPathLastChar = docFullPath | split:'' | last -%}
+{%- if docFullPathLastChar contains '/' -%}	
+	{%- assign truncateDocHomePageSize = docFullPath | size | minus:1 -%}
+	{%- assign docFullPath = docFullPath | slice: 0, truncateDocHomePageSize -%}
+{%- endif -%}
+
+{%- unless excludeFlag or page.layout == "" or page.layout == "default" -%}
+		<url>
+			<loc>{{ docFullPath }}{{page.url | replace:'/index.html','/' | xml_escape}}</loc> 
+		</url>
+{%- endunless -%}
+
+{%- endfor -%}
+</urlset>
