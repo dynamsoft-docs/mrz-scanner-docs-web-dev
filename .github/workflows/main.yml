@@ -18,7 +18,7 @@ jobs:
   # This workflow contains jobs called "Build-Main" and "Build-Preview"
   Build-Main:
     if: ${{ github.ref == 'refs/heads/main' }}
-    uses: dynamsoft-docs/Docs-Template-Repo/.github/workflows/called-workflow-build-sync-production.yml@main
+    uses: dynamsoft-docs/Docs-Template-Repo/.github/workflows/called-workflow-build-sync-production.yml@main --trace
     with:
       doc-repo: mrz-scanner-docs-web-dev
       doc-url: mrz-scanner/docs/web
