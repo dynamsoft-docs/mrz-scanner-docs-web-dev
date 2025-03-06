@@ -1,7 +1,7 @@
 repository: dynamsoft-docs/mrz-scanner-docs-web
 repositoryUrl: https://github.com/dynamsoft-docs/mrz-scanner-docs/blob/main
-docFullPath: https://www.dynamsoft.com/mrz-scanner/docs/web/
-firstLevelUrl: /mrz-scanner/docs/web
+docFullPath: https://www.dynamsoft.com/mrz-scanner/docs
+firstLevelUrl: /mrz-scanner/docs
 docHomePage: /mrz-scanner/docs/introduction/
 
 introduction: /mrz-scanner/docs/introduction/
@@ -21,7 +21,7 @@ edit_icon: /mrz-scanner/docs/assets/img-icon/edit-icon.png
 smile_icon: /mrz-scanner/docs/assets/img-icon/icon-smile.png
 sad_icon: /mrz-scanner/docs/assets/img-icon/icon-sad.png
 
-baseurl: "/mrz-scanner/docs/web"
+baseurl: "/mrz-scanner/docs"
 
 download: "/mrz-scanner/downloads/"
 
