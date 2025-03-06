@@ -27,7 +27,6 @@ download: "/mrz-scanner/downloads/"
 
 plugins:
   - jemoji
-  - jekyll
   - jekyll-sitemap
 
 
